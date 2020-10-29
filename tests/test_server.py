@@ -224,7 +224,7 @@ class TestPetServer(TestCase):
 
     def test_purchase_not_available(self):
         """ Purchase a Pet that is not available """
-        pet = self.get_pet('harry')[0]
+        # pet = self.get_pet('harry')[0]
         resp = self.app.put('/api/pets/{}/purchase'.format(pet['_id']), content_type='application/json')
         self.assertEqual(resp.status_code, HTTP_400_BAD_REQUEST)
         resp_json = resp.get_json()
